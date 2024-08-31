@@ -1,4 +1,6 @@
 const Button = () => {
-  return <button>hello, world!</button>;
+  return (
+    <button style={{ backgroundColor: "var(--primary)" }}>hello, world!</button>
+  );
 };
 export default Button;
