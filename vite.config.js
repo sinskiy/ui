@@ -5,6 +5,9 @@ import dtsPlugin from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { fileURLToPath } from "url";
 import { glob } from "glob";
+import postcssPresetEnv from "postcss-preset-env";
+import autoprefixer from "autoprefixer";
+import theme from "postcss-material-colors";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,9 +16,14 @@ export default defineConfig({
     libInjectCss(),
     dtsPlugin({ include: ["src"], exclude: ["src/**/*.stories.tsx"] }),
   ],
+  css: {
+    postcss: {
+      plugins: [theme(), postcssPresetEnv(), autoprefixer()],
+    },
+  },
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: resolve(__dirname, "src/index.tsx"),
       formats: ["es"],
       fileName: "index",
     },
