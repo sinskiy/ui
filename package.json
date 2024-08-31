@@ -13,7 +13,9 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -24,6 +26,7 @@
     "url": "https://github.com/sinskiy/ui"
   },
   "peerDependencies": {
+    "postcss-material-colors": "^0.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -45,5 +48,7 @@
     "storybook": "^8.2.9",
     "typescript": "^5.5.4"
   },
-  "packageManager": "pnpm@9.8.0+sha512.8e4c3550fb500e808dbc30bb0ce4dd1eb614e30b1c55245f211591ec2cdf9c611cabd34e1364b42f564bd54b3945ed0f49d61d1bbf2ec9bd74b866fcdc723276"
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.1"
+  }
 }
