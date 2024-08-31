@@ -10,8 +10,12 @@
     "storybook",
     "typescript"
   ],
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist./index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -41,14 +45,15 @@
     "@storybook/test": "^8.2.9",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "postcss-material-colors": "^0.2.3",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sass-embedded": "^1.77.8",
     "storybook": "^8.2.9",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vite-plugin-dts": "^4.0.3"
   },
-  "dependencies": {
-    "@vitejs/plugin-react": "^4.3.1"
-  }
+  "packageManager": "pnpm@9.8.0+sha512.8e4c3550fb500e808dbc30bb0ce4dd1eb614e30b1c55245f211591ec2cdf9c611cabd34e1364b42f564bd54b3945ed0f49d61d1bbf2ec9bd74b866fcdc723276"
 }
