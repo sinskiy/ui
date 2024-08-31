@@ -16,6 +16,9 @@
   ],
   "main": "./dist/index.js",
   "types": "./dist./index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
