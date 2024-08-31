@@ -19,5 +19,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sinskiy/ui"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
