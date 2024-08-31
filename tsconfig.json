@@ -1,15 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "skipLibCheck": true,
+    "lib": ["ESNext"],
+
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "module": "commonjs",
+
+    "target": "ES6",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+
+    "outDir": "dist",
+    "skipLibCheck": true,
     "isolatedModules": false,
-    "jsx": "preserve",
-    "incremental": true,
-    "outDir": "dist"
-  }
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "incremental": true
+  },
+  "exclude": ["dist", "node_modules"]
 }
