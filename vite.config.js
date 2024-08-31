@@ -18,7 +18,11 @@ export default defineConfig({
   ],
   css: {
     postcss: {
-      plugins: [theme(), postcssPresetEnv(), autoprefixer()],
+      plugins: [
+        theme({ darkModeStrategy: "class" }),
+        postcssPresetEnv(),
+        autoprefixer(),
+      ],
     },
   },
   build: {
