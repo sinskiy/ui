@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "module": "commonjs",
     "isolatedModules": false,
-    "jsx": "react",
+    "jsx": "preserve",
     "incremental": true,
     "outDir": "dist"
   }
