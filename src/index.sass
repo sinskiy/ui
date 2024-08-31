@@ -1,7 +1,9 @@
+@use "variables"
 @postcss-material-colors (primary: #ff0000)
 
 html
   color-scheme: light dark
+  @include variables.theme($theme-color: background)
 
 body
   font-family: Ubuntu, system-ui
