@@ -1,4 +1,9 @@
+@use "../variables"
+
 .button
+  @include variables.theme
+  padding: 0.5rem 2rem
   border: none
-  background-color: var(--primary)
-  color: var(--on-primary)
+  border-radius: variables.$rounded
+  font-weight: 500
+  @include variables.interactive
