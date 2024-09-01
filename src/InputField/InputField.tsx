@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, useState } from "react";
 import { Input } from "../Input/Input";
 import "./InputField.sass";
 import { Label } from "../Label/Label";
@@ -6,11 +6,13 @@ import { Label } from "../Label/Label";
 
 interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  error?: string;
   id?: string;
 }
 
 export const InputField = ({
   label,
+  error,
   id = label,
   required = false,
   ...props
@@ -21,7 +23,12 @@ export const InputField = ({
         {label}
         {required ? <Required /> : ""}
       </Label>
-      <Input className={"input surface-container-high"} id={id} {...props} />
+      <Input
+        error={error}
+        id={id}
+        className={"input surface-container-high"}
+        {...props}
+      />
     </div>
   );
 };
