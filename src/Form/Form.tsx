@@ -15,18 +15,16 @@ export const Form = ({
   children,
   loading = false,
   ...props
-}: FormProps) => {
-  return (
-    <form className="form" {...props}>
-      <section>
-        {formTitle && <FormTitle>{formTitle}</FormTitle>}
-        <FormDescription>{formDescription}</FormDescription>
-      </section>
-      <FormMain>{children}</FormMain>
-      <FormNav loading={loading} />
-    </form>
-  );
-};
+}: FormProps) => (
+  <form className="form" {...props}>
+    <section>
+      {formTitle && <FormTitle>{formTitle}</FormTitle>}
+      <FormDescription>{formDescription}</FormDescription>
+    </section>
+    <FormMain>{children}</FormMain>
+    <FormNav loading={loading} />
+  </form>
+);
 
 const FormTitle = ({ children }: PropsWithChildren) => {
   if (typeof children === "string") return <h2>{children}</h2>;

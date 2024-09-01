@@ -16,27 +16,23 @@ export const InputField = ({
   id = label,
   required = false,
   ...props
-}: InputFieldProps) => {
-  return (
-    <div className="input-field">
-      <Label id={id}>
-        {label}
-        {required ? <Required /> : ""}
-      </Label>
-      <Input
-        error={error}
-        id={id}
-        className={"input surface-container-high"}
-        {...props}
-      />
-    </div>
-  );
-};
+}: InputFieldProps) => (
+  <div className="input-field">
+    <Label id={id}>
+      {label}
+      {required ? <Required /> : ""}
+    </Label>
+    <Input
+      error={error}
+      id={id}
+      className={"input surface-container-high"}
+      {...props}
+    />
+  </div>
+);
 
-function Required() {
-  return (
-    <span aria-label="required" style={{ color: "var(--error)" }}>
-      *
-    </span>
-  );
-}
+const Required = () => (
+  <span aria-label="required" style={{ color: "var(--error)" }}>
+    *
+  </span>
+);
