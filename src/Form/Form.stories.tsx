@@ -42,3 +42,12 @@ export const WithChildrenAndTitle: Story = {
     children: <>{WithChildren.args.children}</>,
   },
 };
+
+export const WithChildrenAndTitleAndDescription: Story = {
+  args: {
+    formTitle: "Form title",
+    formDescription:
+      "Very long form description for a user. With a description that long they will definitelly understand everything about your form.",
+    children: <>{WithChildren.args.children}</>,
+  },
+};
