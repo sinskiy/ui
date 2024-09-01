@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import { InputField } from "./InputField";
 
 const meta = {
@@ -31,6 +32,16 @@ export const WithRequired: Story = {
   args: {
     label: "Input label",
     required: true,
+    id: "input-with-required-id",
+  },
+};
+
+export const WithError: Story = {
+  args: {
+    label: "Input label",
+    required: true,
+    type: "email",
+    error: "invalid email",
     id: "input-with-required-id",
   },
 };
