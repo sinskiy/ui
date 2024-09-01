@@ -17,18 +17,16 @@ export const Button = ({
   children,
   disabled,
   ...props
-}: ButtonProps) => {
-  return (
-    <button
-      className={classes(themeColor, containerModifier, "button")}
-      disabled={loading || disabled}
-      {...props}
-    >
-      {children}
-      {loading && <Loading />}
-    </button>
-  );
-};
+}: ButtonProps) => (
+  <button
+    className={classes(themeColor, containerModifier, "button")}
+    disabled={loading || disabled}
+    {...props}
+  >
+    {children}
+    {loading && <Loading />}
+  </button>
+);
 
 const Loading = () => (
   <div className="button__loading" aria-label="loading">

@@ -7,10 +7,8 @@ interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   id?: string;
 }
 
-export const Label = ({ children, id, ...props }: LabelProps) => {
-  return (
-    <label className="label" htmlFor={id} {...props}>
-      {children}
-    </label>
-  );
-};
+export const Label = ({ children, id, ...props }: LabelProps) => (
+  <label className="label" htmlFor={id} {...props}>
+    {children}
+  </label>
+);

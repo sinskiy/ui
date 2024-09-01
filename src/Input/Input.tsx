@@ -13,20 +13,18 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   setError?: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-export const Input = ({ id, error, ...props }: InputProps) => {
-  return (
-    <>
-      <input
-        name={id}
-        id={id}
-        className={"input surface-container-high"}
-        {...props}
-      />
-      {error && (
-        <p className="input__error" role="alert">
-          {error}
-        </p>
-      )}
-    </>
-  );
-};
+export const Input = ({ id, error, ...props }: InputProps) => (
+  <>
+    <input
+      name={id}
+      id={id}
+      className={"input surface-container-high"}
+      {...props}
+    />
+    {error && (
+      <p className="input__error" role="alert">
+        {error}
+      </p>
+    )}
+  </>
+);
