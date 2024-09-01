@@ -12,12 +12,24 @@ interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 export const InputField = ({
   label,
   id = label,
+  required = false,
   ...props
 }: InputFieldProps) => {
   return (
     <div className="input-field">
-      <Label id={id}>{label}</Label>
+      <Label id={id}>
+        {label}
+        {required ? <Required /> : ""}
+      </Label>
       <Input className={"input surface-container-high"} id={id} {...props} />
     </div>
   );
 };
+
+function Required() {
+  return (
+    <span aria-label="required" style={{ color: "var(--error)" }}>
+      *
+    </span>
+  );
+}

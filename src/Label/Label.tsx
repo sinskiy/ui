@@ -1,13 +1,13 @@
-import { LabelHTMLAttributes } from "react";
+import { LabelHTMLAttributes, ReactNode } from "react";
 import "./Label.sass";
 // TODO: test using button class in another component. if class is still applied, move to .module.sass
 
 interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
-  children: string;
+  children: ReactNode;
   id?: string;
 }
 
-export const Label = ({ children, id = children, ...props }: LabelProps) => {
+export const Label = ({ children, id, ...props }: LabelProps) => {
   return (
     <label className="label" htmlFor={id} {...props}>
       {children}
