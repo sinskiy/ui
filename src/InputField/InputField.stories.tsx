@@ -26,3 +26,11 @@ export const WithPlaceholder: Story = {
     placeholder: "Input placeholder",
   },
 };
+
+export const WithRequired: Story = {
+  args: {
+    label: "Input label",
+    required: true,
+    id: "input-with-required-id",
+  },
+};
