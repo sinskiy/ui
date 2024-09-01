@@ -1,3 +1,3 @@
 import "./index.sass";
 import "./reset.sass";
-export * from "./Button";
+export * from "./Button/Button";
