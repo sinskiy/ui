@@ -3,12 +3,16 @@
 .input
   width: 100%
 
-  padding: 0.75rem 2rem
+  padding: 0.75rem 1rem
   border: none
   border-radius: variables.$rounded
-  font-size: 2rem
-  text-size-adjust: 50%
+  font-size: 1.25rem
 
   outline: 1px solid var(--outline)
   &:focus
     outline: 2px solid var(--primary)
+
+@media (min-width: 1000px)
+  .input
+    font-size: 2rem
+    padding: 0.75rem 2rem
