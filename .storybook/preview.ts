@@ -2,6 +2,7 @@ import type { Preview, ReactRenderer } from "@storybook/react";
 import { withThemeByClassName } from "@storybook/addon-themes";
 import "../src/reset.sass";
 import "../src/index.sass";
+import "../src/theme.sass";
 
 const preview: Preview = {
   decorators: [
