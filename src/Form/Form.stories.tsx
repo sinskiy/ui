@@ -17,9 +17,28 @@ export const WithChildren: Story = {
   args: {
     children: (
       <>
-        <InputField label="username" type="text" />
-        <InputField label="password" type="password" />
+        <InputField
+          label="username"
+          type="text"
+          required
+          minLength={1}
+          maxLength={30}
+        />
+        <InputField
+          label="password"
+          type="password"
+          required
+          minLength={1}
+          maxLength={30}
+        />
       </>
     ),
+  },
+};
+
+export const WithChildrenAndTitle: Story = {
+  args: {
+    formTitle: "Form title",
+    children: <>{WithChildren.args.children}</>,
   },
 };
