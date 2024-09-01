@@ -20,6 +20,12 @@ export const Primary: Story = {
     themeColor: "primary",
   },
 };
+export const Loading: Story = {
+  args: {
+    themeColor: "primary",
+    loading: true,
+  },
+};
 export const Secondary: Story = {
   args: {
     themeColor: "secondary",

@@ -51,3 +51,10 @@ export const WithChildrenAndTitleAndDescription: Story = {
     children: <>{WithChildren.args.children}</>,
   },
 };
+
+export const WithChildrenAndLoading: Story = {
+  args: {
+    children: <>{WithChildren.args.children}</>,
+    loading: true,
+  },
+};

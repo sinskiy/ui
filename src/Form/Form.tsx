@@ -6,12 +6,14 @@ interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
   formTitle?: ReactNode;
   formDescription?: string;
   children: ReactNode;
+  loading?: boolean;
 }
 
 export const Form = ({
   formTitle,
   formDescription,
   children,
+  loading = false,
   ...props
 }: FormProps) => {
   return (
@@ -21,7 +23,7 @@ export const Form = ({
         <FormDescription>{formDescription}</FormDescription>
       </section>
       <FormMain>{children}</FormMain>
-      <FormNav />
+      <FormNav loading={loading} />
     </form>
   );
 };
@@ -39,13 +41,16 @@ const FormMain = ({ children }: PropsWithChildren) => (
   <section className="form__main">{children}</section>
 );
 
-const FormNav = () => (
+interface FormNavProps {
+  loading: boolean;
+}
+const FormNav = ({ loading }: FormNavProps) => (
   <section className="form__nav">
-    <Button themeColor="primary" type="submit">
+    <Button type="submit" loading={loading} themeColor="primary">
       submit
     </Button>
     {/* error-container for better difference between submit and reset if theme is red */}
-    <Button themeColor="error-container" type="reset">
+    <Button type="reset" loading={loading} themeColor="error-container">
       reset
     </Button>
   </section>
