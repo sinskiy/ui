@@ -1,5 +1,3 @@
-import { ArgTypes } from "storybook/internal/types";
-
 export const themeColors = [
   "primary",
   "secondary",
@@ -12,11 +10,6 @@ export const themeColors = [
   "surface-container",
   "surface-container-high",
 ] as const;
-export const interactiveArgTypes: ArgTypes = {
-  themeColors: {
-    options: themeColors,
-  },
-} as const;
 
 export interface InteractiveProps {
   themeColor?: (typeof themeColors)[number];
