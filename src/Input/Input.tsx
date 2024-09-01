@@ -4,10 +4,13 @@ import "./Input.sass";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-export const Input = ({ ...props }: InputProps) => {
+export const Input = ({ id, ...props }: InputProps) => {
   return (
-    <input className={classes("input surface-container-high")} {...props} />
+    <input
+      name={id}
+      id={id}
+      className={"input surface-container-high"}
+      {...props}
+    />
   );
 };
-
-const classes = (...passedClasses: string[]): string => passedClasses.join(" ");
