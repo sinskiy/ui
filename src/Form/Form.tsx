@@ -1,18 +1,25 @@
-import { FormHTMLAttributes, PropsWithChildren, ReactNode } from "react";
+import type { FormHTMLAttributes, PropsWithChildren, ReactNode } from "react";
 import { Button } from "../Button/Button";
 import "./Form.sass";
 
 interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
+  formTitle?: ReactNode;
   children: ReactNode;
 }
 
-export const Form = ({ children, ...props }: FormProps) => {
+export const Form = ({ formTitle, children, ...props }: FormProps) => {
   return (
     <form className="form" {...props}>
+      {formTitle && <FormTitle>{formTitle}</FormTitle>}
       <FormMain>{children}</FormMain>
       <FormNav />
     </form>
   );
+};
+
+const FormTitle = ({ children }: PropsWithChildren) => {
+  if (typeof children === "string") return <h2>{children}</h2>;
+  return <>{children}</>;
 };
 
 const FormMain = ({ children }: PropsWithChildren) => (
