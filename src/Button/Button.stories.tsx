@@ -7,6 +7,9 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  args: {
+    children: "Button",
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
