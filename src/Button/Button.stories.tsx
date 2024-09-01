@@ -45,8 +45,8 @@ export const ErrorContainer: Story = {
   args: { themeColor: "error-container" },
 };
 export const SurfaceContainer: Story = {
-  args: { themeColor: "surface-container" },
+  args: { themeColor: "surface", containerModifier: "surface-container" },
 };
 export const SurfaceContainerHigh: Story = {
-  args: { themeColor: "surface-container-high" },
+  args: { themeColor: "surface", containerModifier: "surface-container-high" },
 };

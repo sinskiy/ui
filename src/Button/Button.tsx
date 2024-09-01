@@ -4,10 +4,16 @@ import "./Button.sass";
 
 interface ButtonProps extends InteractiveProps {}
 
-export const Button = ({ themeColor = "primary" }: ButtonProps) => {
+export const Button = ({
+  themeColor = "surface",
+  containerModifier,
+}: ButtonProps) => {
   return (
-    <button className={classes(themeColor, "button")}>hello, world!</button>
+    <button className={classes(themeColor, containerModifier, "button")}>
+      hello, world!
+    </button>
   );
 };
 
-const classes = (...passedClasses: string[]): string => passedClasses.join(" ");
+const classes = (...passedClasses: (string | undefined)[]) =>
+  passedClasses.filter((passedClass) => passedClass).join(" ");
