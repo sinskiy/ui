@@ -27,7 +27,9 @@ export const Form = ({
 );
 
 const FormTitle = ({ children }: PropsWithChildren) => {
-  if (typeof children === "string") return <h2>{children}</h2>;
+  if (typeof children === "string") {
+    return <h2>{children}</h2>;
+  }
   return <>{children}</>;
 };
 
