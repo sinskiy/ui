@@ -52,7 +52,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "glob": "^11.0.0",
-    "postcss-material-colors": "^0.4.1",
+    "postcss-material-colors": "^0.6.2",
     "postcss-preset-env": "^10.0.2",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
