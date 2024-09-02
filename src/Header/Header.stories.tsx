@@ -21,18 +21,10 @@ export const Example: Story = {
   args: {
     logo: "coolWebsite",
     navItems: [
-      {
-        href: "/link2",
-        itemLabel: "link 1",
-      },
-      {
-        href: "/link2",
-        itemLabel: "link 2",
-      },
-      {
-        href: "/link2",
-        itemLabel: "link 2",
-      },
+      <a href="/link">nav item 1</a>,
+      <a href="/link">nav item 2</a>,
+      <a href="/link">active nav item</a>,
     ],
+    activeItemIndex: 2,
   },
 };

@@ -1,3 +1,5 @@
+@use "../variables"
+
 .header
   margin: auto
   display: grid
@@ -10,6 +12,20 @@
     font-weight: 500
 
   &__nav
-    display: flex
-    gap: 1.5rem
     font-weight: 500
+
+    &__link
+      display: inline-block
+      padding: 0.5rem 1rem
+      border-radius: variables.$rounded-full
+
+      @include variables.interactive--background
+
+      &:hover
+        @include variables.theme($theme-color: surface-container)
+
+      &--active, &--active:hover
+        @include variables.theme($theme-color: primary-container)
+
+      & > a
+        text-decoration: none

@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import { InteractiveProps } from "../interactive";
 import "./Button.sass";
+import { classes } from "../helpers";
 // TODO: test using button class in another component. if class is still applied, move to .module.sass
 
 interface ButtonProps
@@ -49,6 +50,3 @@ const Loading = () => (
     </svg>
   </div>
 );
-
-const classes = (...passedClasses: (string | undefined)[]) =>
-  passedClasses.filter((passedClass) => passedClass).join(" ");
