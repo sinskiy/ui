@@ -1,9 +1,4 @@
-import {
-  FocusEvent,
-  FocusEventHandler,
-  InputHTMLAttributes,
-  useState,
-} from "react";
+import { InputHTMLAttributes } from "react";
 import "./Input.sass";
 // TODO: test using button class in another component. if class is still applied, move to .module.sass
 
