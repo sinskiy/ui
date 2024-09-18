@@ -1,6 +1,6 @@
 {
   "name": "@sinskiy/ui",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A simple UI library that I use for my projects, powered by React, Sass and postcss-material-colors",
   "keywords": [
     "ui",
@@ -15,7 +15,7 @@
     "dist"
   ],
   "main": "./dist/index.js",
-  "types": "./dist./index.d.ts",
+  "types": "./dist/index.d.ts",
   "sideEffects": [
     "**/*.css"
   ],
