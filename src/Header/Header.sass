@@ -22,11 +22,11 @@
 
       @include variables.interactive--background
 
-      &.active, &.active:hover, &:has(.active, .active:hover)
-        @include variables.theme($theme-color: primary-container)
-
       &.link:hover
         @include variables.theme($theme-color: surface-container)
+
+      &.active, &.active:hover, &:has(.active, .active:hover)
+        @include variables.theme($theme-color: primary-container)
 
       & a:hover
         text-decoration: none
