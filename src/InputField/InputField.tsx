@@ -25,7 +25,7 @@ export const InputField = ({
     <Input
       error={error}
       id={id}
-      className={"input surface-container-high"}
+      className="input surface-container-high"
       {...props}
     />
   </div>
