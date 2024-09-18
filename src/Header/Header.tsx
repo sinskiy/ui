@@ -6,10 +6,16 @@ export interface HeaderProps {
   logo: ReactNode;
   navItems: ReactElement[];
   activeItemIndex?: number;
+  linkButtonIndex?: number;
 }
 
 // TODO: add suport for react-router
-export const Header = ({ logo, navItems, activeItemIndex }: HeaderProps) => (
+export const Header = ({
+  logo,
+  navItems,
+  activeItemIndex,
+  linkButtonIndex,
+}: HeaderProps) => (
   <header className="header">
     <Logo>{logo}</Logo>
     <nav className="header__nav">
@@ -20,6 +26,7 @@ export const Header = ({ logo, navItems, activeItemIndex }: HeaderProps) => (
           className={classes(
             "header__nav__link",
             i === activeItemIndex && "active",
+            i === linkButtonIndex ? "link-button" : "link",
           )}
         >
           {navItem}

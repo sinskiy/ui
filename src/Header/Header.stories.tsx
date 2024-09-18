@@ -17,7 +17,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
+export const WithActive: Story = {
   args: {
     logo: "coolWebsite",
     navItems: [
@@ -26,5 +26,13 @@ export const Example: Story = {
       <a href="/link">active nav item</a>,
     ],
     activeItemIndex: 2,
+  },
+};
+
+export const WithLinkButton: Story = {
+  args: {
+    logo: "coolWebsite",
+    navItems: [<a href="/link">login</a>, <a href="/link">sign up</a>],
+    linkButtonIndex: 1,
   },
 };
