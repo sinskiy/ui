@@ -6,6 +6,7 @@
   grid-template-columns: 1fr auto
   align-items: center
 
+
   &__logo
     max-width: fit-content
     font-size: 1.5rem
@@ -21,11 +22,11 @@
 
       @include variables.interactive--background
 
+      &.active, &.active:hover
+        @include variables.theme($theme-color: primary-container)
+
       &:hover
         @include variables.theme($theme-color: surface-container)
-
-      &--active, &--active:hover
-        @include variables.theme($theme-color: primary-container)
 
       & > a
         text-decoration: none

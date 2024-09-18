@@ -19,7 +19,7 @@ export const Header = ({ logo, navItems, activeItemIndex }: HeaderProps) => (
           key={i}
           className={classes(
             "header__nav__link",
-            i === activeItemIndex && "header__nav__link--active",
+            i === activeItemIndex && "active",
           )}
         >
           {navItem}
