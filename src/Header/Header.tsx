@@ -2,7 +2,7 @@ import { PropsWithChildren, ReactElement, ReactNode } from "react";
 import "./Header.sass";
 import { classes } from "../helpers";
 
-interface HeaderProps {
+export interface HeaderProps {
   logo: ReactNode;
   navItems: ReactElement[];
   activeItemIndex?: number;
