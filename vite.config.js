@@ -14,7 +14,11 @@ export default defineConfig({
   plugins: [
     react(),
     libInjectCss(),
-    dtsPlugin({ include: ["src"], exclude: ["src/**/*.stories.tsx"] }),
+    dtsPlugin({
+      include: ["src"],
+      exclude: ["src/**/*.stories.tsx"],
+      copyDtsFiles: true,
+    }),
   ],
   css: {
     postcss: {
