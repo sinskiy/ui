@@ -16,6 +16,7 @@ export const Header = ({ logo, navItems, activeItemIndex }: HeaderProps) => (
       {/* TODO: move to separate component and highlight active */}
       {navItems.map((navItem, i) => (
         <span
+          key={i}
           className={classes(
             "header__nav__link",
             i === activeItemIndex && "header__nav__link--active",
