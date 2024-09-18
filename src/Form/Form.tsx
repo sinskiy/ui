@@ -19,7 +19,7 @@ export const Form = ({
   <form className="form" {...props}>
     <section>
       {formTitle && <FormTitle>{formTitle}</FormTitle>}
-      <FormDescription>{formDescription}</FormDescription>
+      {formDescription && <FormDescription>{formDescription}</FormDescription>}
     </section>
     <FormMain>{children}</FormMain>
     <FormNav loading={loading} />
