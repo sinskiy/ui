@@ -4,7 +4,7 @@ import "./Button.sass";
 import { classes } from "../helpers";
 // TODO: test using button class in another component. if class is still applied, move to .module.sass
 
-interface ButtonProps
+export interface ButtonProps
   extends InteractiveProps,
     ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;

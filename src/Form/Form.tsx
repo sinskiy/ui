@@ -2,7 +2,7 @@ import type { FormHTMLAttributes, PropsWithChildren, ReactNode } from "react";
 import { Button } from "../Button/Button";
 import "./Form.sass";
 
-interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
+export interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
   formTitle?: ReactNode;
   formDescription?: string;
   children: ReactNode;
