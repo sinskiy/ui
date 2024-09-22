@@ -1,6 +1,6 @@
 {
   "name": "@sinskiy/ui",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "description": "A simple UI library that I use for my projects, powered by React, Sass and postcss-material-colors",
   "keywords": [
     "ui",
