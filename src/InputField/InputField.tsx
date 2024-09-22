@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from "react";
+import { forwardRef, InputHTMLAttributes } from "react";
 import { Input } from "../Input/Input";
 import "./InputField.sass";
 import { Label } from "../Label/Label";
@@ -10,25 +10,22 @@ export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
 }
 
-export const InputField = ({
-  label,
-  error,
-  id = label,
-  required = false,
-  ...props
-}: InputFieldProps) => (
-  <div className="input-field">
-    <Label id={id}>
-      {label}
-      {required ? <Required /> : ""}
-    </Label>
-    <Input
-      error={error}
-      id={id}
-      className="input surface-container-high"
-      {...props}
-    />
-  </div>
+export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
+  ({ label, error, id = label, required = false, ...props }, ref) => (
+    <div className="input-field">
+      <Label id={id}>
+        {label}
+        {required ? <Required /> : ""}
+      </Label>
+      <Input
+        error={error}
+        id={id}
+        className="input surface-container-high"
+        ref={ref}
+        {...props}
+      />
+    </div>
+  ),
 );
 
 const Required = () => (
