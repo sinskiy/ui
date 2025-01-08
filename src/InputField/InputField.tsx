@@ -15,7 +15,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
     <div className="input-field">
       <Label id={id}>
         {label}
-        {required ? <Required /> : ""}
+        {required && <Required />}
       </Label>
       <Input
         error={error}
