@@ -1,57 +1,64 @@
-import type { FormHTMLAttributes, PropsWithChildren, ReactNode } from "react";
-import { Button } from "../Button/Button";
-import "./Form.sass";
+import { FormHTMLAttributes, PropsWithChildren, ReactNode } from "react";
+import classes from "../components.module.css";
+import formClasses from "./Form.module.css";
+import { cn } from "../utils";
 
-export interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
+interface Props extends FormHTMLAttributes<HTMLFormElement>, PropsWithChildren {
+  loading: boolean;
+  error: string | undefined;
   formTitle?: ReactNode;
   formDescription?: string;
-  children: ReactNode;
-  loading?: boolean;
+  showReset?: boolean;
 }
 
-export const Form = ({
+export default function Form({
+  loading,
+  error,
   formTitle,
   formDescription,
+  showReset = true,
   children,
-  loading = false,
   ...props
-}: FormProps) => (
-  <form className="form" {...props}>
-    <section>
-      {formTitle && <FormTitle>{formTitle}</FormTitle>}
-      {formDescription && <FormDescription>{formDescription}</FormDescription>}
-    </section>
-    <FormMain>{children}</FormMain>
-    <FormNav loading={loading} />
-  </form>
-);
-
-const FormTitle = ({ children }: PropsWithChildren) => {
-  if (typeof children === "string") {
-    return <h2>{children}</h2>;
-  }
-  return <>{children}</>;
-};
-
-const FormDescription = ({ children }: PropsWithChildren) => {
-  return <p className="text">{children}</p>;
-};
-
-const FormMain = ({ children }: PropsWithChildren) => (
-  <section className="form__main">{children}</section>
-);
-
-interface FormNavProps {
-  loading: boolean;
+}: Props) {
+  return (
+    <form {...props}>
+      <section>
+        {formTitle &&
+          (typeof formTitle === "string" ? (
+            <h2 className={formClasses.formTitle}>{formTitle}</h2>
+          ) : (
+            formTitle
+          ))}
+        {formDescription && <p className={classes.text}>{formDescription}</p>}
+      </section>
+      <section className={formClasses.formBody}>{children}</section>
+      <section className={formClasses.formNav}>
+        <button
+          type="submit"
+          disabled={loading}
+          className={cn(classes.button, formClasses.formButton)}
+        >
+          submit
+          {loading && <Loading />}
+        </button>
+        {showReset && (
+          <button
+            type="reset"
+            className={cn(classes.button, classes.errorContainer)}
+          >
+            reset
+          </button>
+        )}
+        <p className={classes.error}>{error}</p>
+      </section>
+    </form>
+  );
 }
-const FormNav = ({ loading }: FormNavProps) => (
-  <section className="form__nav">
-    <Button type="submit" loading={loading} themeColor="primary">
-      submit
-    </Button>
-    {/* error-container for better difference between submit and reset if theme is red */}
-    <Button type="reset" loading={loading} themeColor="error-container">
-      reset
-    </Button>
-  </section>
-);
+
+function Loading() {
+  return (
+    <div className={formClasses.loaderWrapper} aria-label="loading">
+      <span className={formClasses.loader}></span>
+    </div>
+  );
+}

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Form } from "./Form";
-import { InputField } from "../InputField/InputField";
+import Form from "./Form";
+import InputField from "../InputField/InputField";
 
 const meta = {
   title: "Form",
@@ -8,53 +8,108 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  args: {},
 } satisfies Meta<typeof Form>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const WithChildren: Story = {
+export const Default: Story = {
   args: {
+    error: undefined,
+    loading: false,
     children: (
       <>
-        <InputField
-          label="username"
-          type="text"
-          required
-          minLength={1}
-          maxLength={30}
-        />
-        <InputField
-          label="password"
-          type="password"
-          required
-          minLength={1}
-          maxLength={30}
-        />
+        <>
+          <InputField id="username" type="text" required error={undefined} />
+          <InputField
+            id="password"
+            type="password"
+            required
+            error={undefined}
+          />
+        </>
       </>
     ),
   },
 };
-
-export const WithChildrenAndTitle: Story = {
+export const WithoutReset: Story = {
   args: {
-    formTitle: "Form title",
-    children: <>{WithChildren.args.children}</>,
+    error: undefined,
+    loading: false,
+    showReset: false,
+    children: (
+      <>
+        <>
+          <InputField id="username" type="text" required error={undefined} />
+          <InputField
+            id="password"
+            type="password"
+            required
+            error={undefined}
+          />
+        </>
+      </>
+    ),
   },
 };
-
-export const WithChildrenAndTitleAndDescription: Story = {
+export const Loading: Story = {
   args: {
-    formTitle: "Form title",
-    formDescription:
-      "Very long form description for a user. With a description that long they will definitelly understand everything about your form.",
-    children: <>{WithChildren.args.children}</>,
-  },
-};
-
-export const WithChildrenAndLoading: Story = {
-  args: {
-    children: <>{WithChildren.args.children}</>,
+    error: undefined,
     loading: true,
+    children: (
+      <>
+        <>
+          <InputField id="username" type="text" required error={undefined} />
+          <InputField
+            id="password"
+            type="password"
+            required
+            error={undefined}
+          />
+        </>
+      </>
+    ),
+  },
+};
+export const WithError: Story = {
+  args: {
+    error: "Oh no!",
+    loading: false,
+    children: (
+      <>
+        <>
+          <InputField
+            id="username"
+            type="text"
+            required
+            error="Inputs can have errors too"
+          />
+          <InputField id="password" type="password" required error="Yeah" />
+        </>
+      </>
+    ),
+  },
+};
+export const TitleAndDescription: Story = {
+  args: {
+    formTitle: "Hello!",
+    formDescription:
+      "I hate people I hate people I hate people I hate people I hate people I hate people I hate people I hate people I hate people",
+    error: undefined,
+    loading: false,
+    children: (
+      <>
+        <>
+          <InputField id="username" type="text" required error={undefined} />
+          <InputField
+            id="password"
+            type="password"
+            required
+            error={undefined}
+          />
+        </>
+      </>
+    ),
   },
 };

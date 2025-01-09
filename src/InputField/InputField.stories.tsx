@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
-import { InputField } from "./InputField";
+import InputField from "./InputField";
 
 const meta = {
   title: "InputField",
@@ -8,40 +7,28 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  args: {
+    id: "id",
+    label: "label",
+  },
 } satisfies Meta<typeof InputField>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    label: "Input label",
-    id: "input-id",
-  },
+  args: { error: undefined, type: "string" },
 };
-
-export const WithPlaceholder: Story = {
+export const Required: Story = {
   args: {
-    label: "Input label",
-    id: "input-with-placeholder-id",
-    placeholder: "Input placeholder",
-  },
-};
-
-export const WithRequired: Story = {
-  args: {
-    label: "Input label",
     required: true,
-    id: "input-with-required-id",
+    type: "string",
+    error: undefined,
   },
 };
-
 export const WithError: Story = {
   args: {
-    label: "Input label",
-    required: true,
-    type: "email",
-    error: "invalid email",
-    id: "input-with-required-id",
+    type: "number",
+    error: "Must be a number",
   },
 };
