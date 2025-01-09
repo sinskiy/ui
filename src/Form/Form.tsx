@@ -55,7 +55,7 @@ export default function Form({
   );
 }
 
-function Loading() {
+export function Loading() {
   return (
     <div className={formClasses.loaderWrapper} aria-label="loading">
       <span className={formClasses.loader}></span>
