@@ -31,3 +31,8 @@ export default function App() {
 ```
 
 CSS classes are in `src/components.css`, components are in the [preview](https://sinskiy.github.io/ui)
+
+### additional
+
+- if you haven't imported anything from ui library yet, add `import {} from "@sinskiy/ui"` anywhere to apply styles
+- to overwrite styles from `@sinskiy/ui`, add new CSS layers like this: `@layer lib-reset, lib-default, lib-components, custom-layer, another-layer, ...`
