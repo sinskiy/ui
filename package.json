@@ -1,8 +1,7 @@
 {
   "name": "@sinskiy/ui",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "type": "module",
-  "description": "A simple UI library that I use for my projects, powered by React, Sass and postcss-material-colors",
   "keywords": [
     "ui",
     "component library",
@@ -11,14 +10,19 @@
     "storybook",
     "typescript"
   ],
-  "files": [
-    "dist"
-  ],
   "author": "sinskiy <sinskiy@proton.me>",
   "repository": {
     "type": "git",
     "url": "https://github.com/sinskiy/ui"
   },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "build": "tsc -b && vite build",
     "lint": "eslint .",
