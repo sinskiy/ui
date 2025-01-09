@@ -1,5 +1,4 @@
 import { FormHTMLAttributes, PropsWithChildren, ReactNode } from "react";
-import classes from "../components.module.css";
 import formClasses from "./Form.module.css";
 import { cn } from "../utils";
 
@@ -29,27 +28,24 @@ export function Form({
           ) : (
             formTitle
           ))}
-        {formDescription && <p className={classes.text}>{formDescription}</p>}
+        {formDescription && <p className="text">{formDescription}</p>}
       </section>
       <section className={formClasses.formBody}>{children}</section>
       <section className={formClasses.formNav}>
         <button
           type="submit"
           disabled={loading}
-          className={cn(classes.button, formClasses.formButton)}
+          className={cn("button", formClasses.formButton)}
         >
           submit
           {loading && <Loading />}
         </button>
         {showReset && (
-          <button
-            type="reset"
-            className={cn(classes.button, classes.errorContainer)}
-          >
+          <button type="reset" className="button error-container">
             reset
           </button>
         )}
-        <p className={classes.error}>{error}</p>
+        <p className="text-error error">{error}</p>
       </section>
     </form>
   );

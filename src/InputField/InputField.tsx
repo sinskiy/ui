@@ -1,5 +1,4 @@
 import { InputHTMLAttributes } from "react";
-import classes from "../components.module.css";
 import { cn } from "../utils";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
@@ -20,10 +19,10 @@ export function InputField({
 }: Props) {
   return (
     <>
-      <label htmlFor={id} className={classes.label}>
+      <label htmlFor={id} className="label">
         {label}
         {required && (
-          <span aria-label="required" className={classes.textError}>
+          <span aria-label="required" className="text-error">
             *
           </span>
         )}
@@ -31,14 +30,10 @@ export function InputField({
       <input
         name={name}
         id={id}
-        className={cn(
-          className,
-          classes.input,
-          error && classes.inputWithError
-        )}
+        className={cn(className, "input", error && "input-with-error")}
         {...props}
       />
-      <p className={classes.error}>{error}</p>
+      <p className="text-error error">{error}</p>
     </>
   );
 }
