@@ -9,7 +9,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   error: string | undefined;
 }
 
-export default function InputField({
+export function InputField({
   id,
   name = id,
   label = id,

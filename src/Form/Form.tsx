@@ -11,7 +11,7 @@ interface Props extends FormHTMLAttributes<HTMLFormElement>, PropsWithChildren {
   showReset?: boolean;
 }
 
-export default function Form({
+export function Form({
   loading,
   error,
   formTitle,
