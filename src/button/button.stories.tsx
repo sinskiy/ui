@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ButtonHTMLAttributes } from "react";
-import classes from "../components.module.css";
 
 const Button = ({
   children,
@@ -22,12 +21,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    className: classes.button,
+    className: "button",
   },
 };
 export const WithIcon: Story = {
   args: {
-    className: `${classes.button} ${classes.withIcon}`,
+    className: "button with-icon",
     children: (
       <>
         <svg

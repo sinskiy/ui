@@ -1,10 +1,10 @@
-import { extname, relative, resolve } from "node:path";
+import { /*extname, relative,*/ resolve } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dtsPlugin from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
-import { fileURLToPath } from "node:url";
-import { glob } from "glob";
+// import { fileURLToPath } from "node:url";
+// import { glob } from "glob";
 import theme from "postcss-material-colors";
 
 // https://vitejs.dev/config/
@@ -35,26 +35,6 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ["react", "react/jsx-runtime"],
-      input: Object.fromEntries(
-        glob
-          .sync("src/**/*.{ts,tsx}", {
-            ignore: ["src/**/*.stories.tsx", "src/*.d.ts"],
-          })
-          .map((file) => [
-            relative("src", file.slice(0, file.length - extname(file).length)),
-            fileURLToPath(new URL(file, import.meta.url)),
-          ])
-      ),
-      output: {
-        assetFileNames: ({ originalFileNames }) => {
-          if (originalFileNames.length === 0) return "[name][extname]";
-          const paths = originalFileNames[0].split("/");
-          if (paths.length === 2) return "[name][extname]";
-          const parentFolder = originalFileNames[0].split("/")[1];
-          return `${parentFolder}/[name][extname]`;
-        },
-        entryFileNames: "[name].js",
-      },
     },
   },
 });
