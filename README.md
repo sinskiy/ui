@@ -18,13 +18,9 @@ a simple UI library that I use for my projects, powered by React, Sass and postc
 4. use components. example:
 
 ```ts
-import { Button } from "@sinskiy/ui"
+import { Button } from "@sinskiy/ui";
 
 export default function App() {
-  return <Button themeColor="primary">hello, world!</Button>
+  return <Button themeColor="primary">hello, world!</Button>;
 }
 ```
-
-## environments
-
-postcss-preset-env and autoprefixer are used with zero configuration
