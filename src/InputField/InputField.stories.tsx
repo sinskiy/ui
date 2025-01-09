@@ -17,12 +17,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: { error: undefined, type: "string" },
+  args: { error: undefined, type: "text" },
 };
 export const Required: Story = {
   args: {
     required: true,
-    type: "string",
+    type: "text",
     error: undefined,
   },
 };
