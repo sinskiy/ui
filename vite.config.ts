@@ -1,10 +1,8 @@
-import { /*extname, relative,*/ resolve } from "node:path";
+import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dtsPlugin from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
-// import { fileURLToPath } from "node:url";
-// import { glob } from "glob";
 import theme from "postcss-material-colors";
 
 // https://vitejs.dev/config/
