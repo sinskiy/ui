@@ -1,0 +1,67 @@
+.interactive {
+  transition: opacity 200ms;
+}
+.interactive:hover {
+  opacity: 0.8;
+}
+.interactive:active {
+  transform: scale(0.95);
+}
+
+.button {
+  composes: interactive;
+  font-weight: 500;
+  padding: 8px 32px;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border-radius: var(--rounded-full);
+}
+
+.with-icon {
+  display: flex;
+  gap: 4px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+}
+
+.input {
+  width: 100%;
+  padding: 4px 16px;
+  outline: 1px solid var(--outline);
+  background-color: var(--surface-container-high);
+  border-radius: var(--rounded-small);
+  font-size: 1.25rem;
+}
+.input:focus {
+  outline: 2px solid var(--primary);
+}
+.input-with-error,
+.input-with-error:focus {
+  outline: 2px solid var(--error);
+}
+
+.text-error {
+  color: var(--error);
+  width: 100%;
+}
+
+.error {
+  composes: text-error;
+  margin-top: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.error-container {
+  background-color: var(--error-container);
+  color: var(--on-error-container);
+}
+
+.text {
+  max-width: 60ch;
+  color: var(--on-surface-variant);
+}

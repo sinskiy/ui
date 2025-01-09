@@ -1,16 +1,13 @@
 import type { Preview, ReactRenderer } from "@storybook/react";
 import { withThemeByClassName } from "@storybook/addon-themes";
-import "../src/reset.sass";
-import "../src/index.sass";
-import "../src/theme.sass";
+import "../src/reset.css";
+import "../src/index.css";
+import "./theme.css";
 
 const preview: Preview = {
   decorators: [
     withThemeByClassName<ReactRenderer>({
-      themes: {
-        light: "",
-        dark: "dark",
-      },
+      themes: { light: "", dark: "dark" },
       defaultTheme: "light",
     }),
   ],

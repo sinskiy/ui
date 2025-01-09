@@ -1,35 +1,44 @@
-import { forwardRef, InputHTMLAttributes } from "react";
-import { Input } from "../Input/Input";
-import "./InputField.sass";
-import { Label } from "../Label/Label";
-// TODO: test using button class in another component. if class is still applied, move to .module.sass
+import { InputHTMLAttributes } from "react";
+import classes from "../components.module.css";
+import { cn } from "../utils";
 
-export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-  error?: string;
-  id?: string;
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+  type: string;
+  label?: string;
+  error: string | undefined;
 }
 
-export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
-  ({ label, error, id = label, required = false, ...props }, ref) => (
-    <div className="input-field">
-      <Label id={id}>
+export default function InputField({
+  id,
+  name = id,
+  label = id,
+  className,
+  required,
+  error,
+  ...props
+}: Props) {
+  return (
+    <>
+      <label htmlFor={id} className={classes.label}>
         {label}
-        {required && <Required />}
-      </Label>
-      <Input
-        error={error}
+        {required && (
+          <span aria-label="required" className={classes.textError}>
+            *
+          </span>
+        )}
+      </label>
+      <input
+        name={name}
         id={id}
-        className="input surface-container-high"
-        ref={ref}
+        className={cn(
+          className,
+          classes.input,
+          error && classes.inputWithError
+        )}
         {...props}
       />
-    </div>
-  ),
-);
-
-const Required = () => (
-  <span aria-label="required" style={{ color: "var(--error)" }}>
-    *
-  </span>
-);
+      <p className={classes.error}>{error}</p>
+    </>
+  );
+}

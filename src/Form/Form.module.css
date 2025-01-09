@@ -1,0 +1,46 @@
+.form-body {
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.form-title {
+  font-size: 2rem;
+}
+
+.form-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.form-button {
+  position: relative;
+}
+
+.loader-wrapper {
+  background-color: inherit;
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--rounded-full);
+  border: 3px solid currentColor;
+  border-bottom-color: transparent;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

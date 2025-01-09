@@ -1,8 +1,3 @@
-import "./reset.sass";
-import "./index.sass";
-export * from "./Button/Button";
-export * from "./Label/Label";
-export * from "./Input/Input";
-export * from "./InputField/InputField";
-export * from "./Form/Form";
-export * from "./Header/Header";
+import "./reset.css";
+import "./index.css";
+export * as classes from "./components.module.css";
