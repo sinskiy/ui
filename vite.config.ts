@@ -13,9 +13,10 @@ export default defineConfig({
     react(),
     libInjectCss(),
     dtsPlugin({
-      include: ["src"],
-      exclude: ["src/**/*.stories.tsx"],
-      copyDtsFiles: true,
+      include: ["src/**/*.tsx", "src/**/*.ts"],
+      exclude: ["src/**/*.stories.tsx", "src/vite-end.d.ts"],
+      rollupTypes: true,
+      tsconfigPath: "./tsconfig.app.json",
     }),
   ],
   css: {
@@ -37,7 +38,7 @@ export default defineConfig({
       input: Object.fromEntries(
         glob
           .sync("src/**/*.{ts,tsx}", {
-            ignore: ["src/**/*.stories.tsx"],
+            ignore: ["src/**/*.stories.tsx", "src/*.d.ts"],
           })
           .map((file) => [
             relative("src", file.slice(0, file.length - extname(file).length)),
@@ -47,8 +48,10 @@ export default defineConfig({
       output: {
         assetFileNames: ({ originalFileNames }) => {
           if (originalFileNames.length === 0) return "[name][extname]";
+          const paths = originalFileNames[0].split("/");
+          if (paths.length === 2) return "[name][extname]";
           const parentFolder = originalFileNames[0].split("/")[1];
-          return `assets/${parentFolder}[extname]`;
+          return `${parentFolder}/[name][extname]`;
         },
         entryFileNames: "[name].js",
       },
