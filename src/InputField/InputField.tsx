@@ -1,11 +1,12 @@
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, RefObject } from "react";
 import { cn } from "../utils";
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   id: string;
   type: string;
   label?: string;
   error: string | undefined;
+  ref?: RefObject<HTMLInputElement | null>;
 }
 
 export function InputField({
@@ -15,6 +16,7 @@ export function InputField({
   className,
   required,
   error,
+  ref,
   ...props
 }: Props) {
   return (
@@ -31,6 +33,7 @@ export function InputField({
         name={name}
         id={id}
         className={cn(className, "input", error && "input-with-error")}
+        ref={ref}
         {...props}
       />
       <p className="text-error error">{error}</p>
