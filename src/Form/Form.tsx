@@ -7,7 +7,7 @@ interface Props extends FormHTMLAttributes<HTMLFormElement>, PropsWithChildren {
   error: string | undefined;
   formTitle?: ReactNode;
   formDescription?: string;
-  showReset?: boolean;
+  secondButton?: ReactNode | false;
 }
 
 export function Form({
@@ -15,7 +15,7 @@ export function Form({
   error,
   formTitle,
   formDescription,
-  showReset = true,
+  secondButton,
   children,
   ...props
 }: Props) {
@@ -44,7 +44,7 @@ export function Form({
             </div>
           )}
         </button>
-        {showReset && (
+        {secondButton ?? (
           <button type="reset" className="button error-container">
             reset
           </button>
