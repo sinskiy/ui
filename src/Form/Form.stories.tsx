@@ -37,7 +37,7 @@ export const WithoutReset: Story = {
   args: {
     error: undefined,
     loading: false,
-    showReset: false,
+    secondButton: false,
     children: (
       <>
         <>
