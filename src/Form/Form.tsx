@@ -38,7 +38,11 @@ export function Form({
           className={cn("button", formClasses.button)}
         >
           submit
-          {loading && <Loading />}
+          {loading && (
+            <div className={formClasses.loaderWrapper}>
+              <Loading />
+            </div>
+          )}
         </button>
         {showReset && (
           <button type="reset" className="button error-container">
@@ -52,9 +56,5 @@ export function Form({
 }
 
 export function Loading() {
-  return (
-    <div className={formClasses.loaderWrapper} aria-label="loading">
-      <span className={formClasses.loader}></span>
-    </div>
-  );
+  return <span className={formClasses.loader} aria-label="loading"></span>;
 }
