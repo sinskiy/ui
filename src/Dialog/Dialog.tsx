@@ -14,9 +14,9 @@ export interface Props
     PropsWithChildren {
   loading: boolean;
   error: string | undefined;
-  ref: RefObject<HTMLDialogElement>;
-  dialogTitle: ReactNode;
-  dialogDescription: string;
+  ref?: RefObject<HTMLDialogElement>;
+  dialogTitle?: ReactNode;
+  dialogDescription?: string;
 }
 
 export default function Dialog({
