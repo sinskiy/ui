@@ -1,0 +1,12 @@
+.select-input-dropdown {
+  display: block;
+  padding: 0;
+}
+
+.value-wrapper {
+  position: relative;
+  padding: 6px 16px;
+}
+.value-wrapper:hover {
+  background-color: var(--surface-container-highest);
+}
