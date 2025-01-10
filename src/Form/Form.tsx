@@ -24,18 +24,18 @@ export function Form({
       <section>
         {formTitle &&
           (typeof formTitle === "string" ? (
-            <h2 className={formClasses.formTitle}>{formTitle}</h2>
+            <h2 className={formClasses.title}>{formTitle}</h2>
           ) : (
             formTitle
           ))}
         {formDescription && <p className="text">{formDescription}</p>}
       </section>
-      <section className={formClasses.formBody}>{children}</section>
-      <section className={formClasses.formNav}>
+      <section className={formClasses.body}>{children}</section>
+      <section className={formClasses.nav}>
         <button
           type="submit"
           disabled={loading}
-          className={cn("button", formClasses.formButton)}
+          className={cn("button", formClasses.button)}
         >
           submit
           {loading && <Loading />}
