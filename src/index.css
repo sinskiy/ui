@@ -1,5 +1,6 @@
 :root {
   --rounded-small: 4px;
+  --rounded-medium: 24px;
   --rounded-full: 9999px;
   --opacity-small: 0.5;
   --opacity-medium: 0.8;
