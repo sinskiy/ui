@@ -1,19 +1,19 @@
-.form-body {
+.body {
   margin-top: 8px;
   margin-bottom: 20px;
 }
 
-.form-title {
+.title {
   font-size: 2rem;
 }
 
-.form-nav {
+.nav {
   display: flex;
   gap: 4px;
   flex-wrap: wrap;
 }
 
-.form-button {
+.button {
   position: relative;
 }
 
