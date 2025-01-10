@@ -1,0 +1,7 @@
+.dialog {
+  padding: 48px 32px;
+  padding-bottom: 12px;
+  border-radius: var(--rounded-medium);
+  background-color: var(--surface-container);
+  color: inherit;
+}
