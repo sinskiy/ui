@@ -1,0 +1,35 @@
+.wrapper {
+  position: relative;
+}
+
+.with-icon {
+  padding-left: 8px;
+}
+.label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.content-wrapper {
+  position: absolute;
+  margin-top: 8px;
+  display: none;
+  z-index: 10;
+}
+
+input[type="checkbox"]:checked ~ .content-wrapper {
+  display: block;
+}
+
+input[type="checkbox"]:checked + .label {
+  opacity: var(--opacity-medium);
+  transform: scale(var(--scale));
+}
+
+.rotate-icon {
+  transition: transform var(--transition-length);
+}
+input[type="checkbox"]:checked + .label > .rotate-icon {
+  transform: rotate(180deg);
+}
