@@ -35,4 +35,4 @@ CSS classes are in `src/components.css`, components are in the [preview](https:/
 ### additional
 
 - if you haven't imported anything from ui library yet, add `import {} from "@sinskiy/ui"` anywhere to apply styles
-- to overwrite styles from `@sinskiy/ui`, add new CSS layers like this: `@layer lib-reset, lib-default, lib-components, custom-layer, another-layer, ...`
+- to guaranteed overwrite styles from `@sinskiy/ui`, write your overwrite in [a custom CSS layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer)
