@@ -18,7 +18,7 @@ export function InputField({
   ...props
 }: Props) {
   return (
-    <>
+    <div>
       <label htmlFor={id} className="label">
         {label}
         {required && (
@@ -34,6 +34,6 @@ export function InputField({
         {...props}
       />
       <p className="text-error error">{error}</p>
-    </>
+    </div>
   );
 }
